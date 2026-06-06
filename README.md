@@ -27,8 +27,9 @@ The boundary is intentional:
 
 ## Current Status
 
-This repository is in its initial scaffold stage. It does not yet contain
-production utility CLIs.
+This repository is in its initial scaffold stage. It has the initial CLI layout
+for future Bash and Python tools, but it does not yet contain production utility
+CLIs.
 
 The existing `caff` and `sort` utilities remain in `codeforester/base` for now.
 They can be migrated here later through separate issues and pull requests once
@@ -59,6 +60,12 @@ Or through Base:
 
 ```bash
 basectl test base-platform-tools
+```
+
+List the commands declared by this repository:
+
+```bash
+basectl run base-platform-tools --list
 ```
 
 ## What Belongs Here
@@ -92,8 +99,19 @@ Keep these outside Base Platform Tools:
 
 ```text
 .
+├── bin/
+│   └── README.md
 ├── base_manifest.yaml
+├── cli/
+│   ├── README.md
+│   ├── bash/
+│   │   └── README.md
+│   └── python/
+│       ├── README.md
+│       └── base_platform_tools/
+│           └── __init__.py
 ├── docs/
+│   ├── cli-layout.md
 │   └── tooling-boundary.md
 ├── tests/
 │   └── validate.sh
@@ -103,6 +121,8 @@ Keep these outside Base Platform Tools:
 └── README.md
 ```
 
-Future tools should live under a structure that matches their implementation
-language and operational domain. The exact layout should be introduced when the
-first real tool is migrated or added.
+Future tools should live under the seeded CLI structure, with per-tool
+subdirectories added when the first real tool is migrated or created.
+
+See [CLI Layout](docs/cli-layout.md) for the command structure and launcher
+conventions.

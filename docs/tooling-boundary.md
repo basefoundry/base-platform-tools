@@ -44,6 +44,23 @@ operations space:
 
 These tools may have different platform support than Base itself.
 
+## CLI Boundary
+
+Base Platform Tools does not own a second control plane. It must not copy
+`basectl` or `base-wrapper`.
+
+Instead:
+
+- Base owns `basectl`.
+- Base owns `base-wrapper`.
+- Base Platform Tools owns optional tool implementations.
+- `base_manifest.yaml` declares runnable tool commands.
+- Base invokes those commands through `basectl run base-platform-tools <command>`.
+
+Bash tools may use the Base runtime through `#!/usr/bin/env basectl`. Python
+tools should run through Base's `base-wrapper` using the `base-platform-tools`
+project virtual environment.
+
 ## Platform Support Policy
 
 Base should aim for macOS, Linux, WSL, and eventually native Windows support.
