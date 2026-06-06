@@ -7,4 +7,5 @@ test:
   command: tests/validate.sh
 
 commands:
+  cli-check: tests/validate.sh
   validate: tests/validate.sh

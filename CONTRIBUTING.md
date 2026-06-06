@@ -60,6 +60,39 @@ Prefer portable implementations when practical, but do not hide platform
 limitations. A useful macOS/Linux/WSL-only tool is acceptable when the limitation
 is explicit.
 
+## CLI Layout
+
+Use the seeded CLI layout for new tools:
+
+- `bin/` contains thin public launchers only.
+- `cli/bash/commands/<tool>/` contains Bash command implementations.
+- `cli/python/base_platform_tools/<tool>/` contains Python command packages.
+- `base_manifest.yaml` declares commands that Base can run with
+  `basectl run base-platform-tools <command>`.
+
+Do not copy `basectl` or `base-wrapper` into this repository. Base owns those
+entrypoints. Base Platform Tools reuses them through manifest-declared commands
+and thin launchers.
+
+Python launchers should invoke:
+
+```bash
+"$BASE_HOME/bin/base-wrapper" \
+  --project "${BASE_PROJECT:-base-platform-tools}" \
+  base_platform_tools.<tool> "$@"
+```
+
+When a Python launcher needs this repository's package root, prepend
+`$repo_root/cli/python` to `PYTHONPATH` before calling `base-wrapper`.
+
+Bash tools that need the Base runtime may use:
+
+```bash
+#!/usr/bin/env basectl
+```
+
+and should keep their implementation under `cli/bash/commands/<tool>/`.
+
 ## Validation
 
 Run:
