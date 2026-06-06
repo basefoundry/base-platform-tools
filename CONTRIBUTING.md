@@ -108,3 +108,10 @@ basectl test base-platform-tools
 ```
 
 Use more specific tests once real tool implementations are added.
+
+For migrated Bash tools, run the BATS coverage:
+
+```bash
+bats cli/bash/commands/caff/tests/caff.bats
+bats cli/bash/commands/sort-in-place/tests/sort-in-place.bats
+```

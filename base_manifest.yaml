@@ -7,5 +7,7 @@ test:
   command: tests/validate.sh
 
 commands:
+  caff: bin/caff
   cli-check: tests/validate.sh
+  sort-in-place: bin/sort-in-place
   validate: tests/validate.sh

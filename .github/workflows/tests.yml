@@ -12,5 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install BATS
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bats
+
       - name: Run validation
         run: tests/validate.sh
+
+      - name: Run BATS tests
+        run: |
+          bats \
+            cli/bash/commands/caff/tests/caff.bats \
+            cli/bash/commands/sort-in-place/tests/sort-in-place.bats

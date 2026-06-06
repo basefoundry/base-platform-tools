@@ -80,8 +80,8 @@ Unsupported platforms should include a short reason.
 
 ## Migration Policy
 
-Existing simple utilities such as `caff` and `sort` remain in `codeforester/base`
-until this repository baseline is stable.
+The initial migrated utilities are `caff` and `sort-in-place`, which came from
+`codeforester/base`.
 
 When a utility moves here:
 

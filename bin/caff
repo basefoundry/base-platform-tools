@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+repo_root="$(cd -- "$(dirname -- "$0")/.." && pwd -P)" || exit 1
+command_path="$repo_root/cli/bash/commands/caff/caff.sh"
+
+if [[ -n "${BASE_HOME:-}" ]]; then
+    if [[ ! -x "$BASE_HOME/bin/basectl" ]]; then
+        printf 'ERROR: BASE_HOME is set but basectl was not found at %s/bin/basectl.\n' "$BASE_HOME" >&2
+        exit 1
+    fi
+    exec "$BASE_HOME/bin/basectl" "$command_path" "$@"
+fi
+
+if command -v basectl >/dev/null 2>&1; then
+    exec basectl "$command_path" "$@"
+fi
+
+printf 'ERROR: BASE_HOME is not set and basectl was not found on PATH.\n' >&2
+exit 1
