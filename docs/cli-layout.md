@@ -47,8 +47,10 @@ Expose tools through `base_manifest.yaml` so Base can list and run them:
 
 ```yaml
 commands:
+  caff: bin/caff
   example-bash: cli/bash/commands/example-bash/example-bash.sh
   example-python: bin/example-python
+  sort-in-place: bin/sort-in-place
 ```
 
 Run them with:
@@ -137,3 +139,10 @@ cli/python/base_platform_tools/<tool>/tests/
 Wire the useful test command into `base_manifest.yaml` when the tool is ready.
 The repository-level `tests/validate.sh` should stay a lightweight contract
 check for the whole repo.
+
+Current migrated Bash tool tests:
+
+```bash
+bats cli/bash/commands/caff/tests/caff.bats
+bats cli/bash/commands/sort-in-place/tests/sort-in-place.bats
+```

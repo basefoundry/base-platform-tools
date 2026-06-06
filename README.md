@@ -27,13 +27,11 @@ The boundary is intentional:
 
 ## Current Status
 
-This repository is in its initial scaffold stage. It has the initial CLI layout
-for future Bash and Python tools, but it does not yet contain production utility
-CLIs.
+This repository is in its early stage. It has the initial CLI layout and hosts
+the first migrated Bash utility CLIs from Base:
 
-The existing `caff` and `sort` utilities remain in `codeforester/base` for now.
-They can be migrated here later through separate issues and pull requests once
-this repository baseline is stable.
+- `caff`
+- `sort-in-place`
 
 ## Getting Started
 
@@ -68,6 +66,13 @@ List the commands declared by this repository:
 basectl run base-platform-tools --list
 ```
 
+Run the migrated utilities through Base:
+
+```bash
+basectl run base-platform-tools caff -- --help
+basectl run base-platform-tools sort-in-place -- --help
+```
+
 ## What Belongs Here
 
 Good candidates for this repository include:
@@ -100,12 +105,17 @@ Keep these outside Base Platform Tools:
 ```text
 .
 ├── bin/
-│   └── README.md
+│   ├── README.md
+│   ├── caff
+│   └── sort-in-place
 ├── base_manifest.yaml
 ├── cli/
 │   ├── README.md
 │   ├── bash/
-│   │   └── README.md
+│   │   ├── README.md
+│   │   └── commands/
+│   │       ├── caff/
+│   │       └── sort-in-place/
 │   └── python/
 │       ├── README.md
 │       └── base_platform_tools/
