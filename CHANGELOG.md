@@ -4,6 +4,10 @@ All notable changes to Base Platform Tools will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Relicensed Base Platform Tools from MIT to AGPL-3.0-or-later.
+
 ### Added
 
 - Migrated the `caff` and `sort-in-place` Bash utility CLIs from

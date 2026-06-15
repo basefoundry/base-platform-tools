@@ -136,3 +136,8 @@ subdirectories added when the first real tool is migrated or created.
 
 See [CLI Layout](docs/cli-layout.md) for the command structure and launcher
 conventions.
+
+## License
+
+Base Platform Tools is licensed under AGPL-3.0-or-later. See
+[LICENSE](LICENSE) for the full terms.
