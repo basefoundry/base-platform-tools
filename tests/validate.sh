@@ -82,8 +82,8 @@ main() {
     require_text bin/sort-in-place 'BASE_HOME' || failed=1
     require_text cli/README.md 'Base owns `basectl`' || failed=1
     require_text cli/bash/README.md '#!/usr/bin/env basectl' || failed=1
-    require_text cli/bash/commands/caff/README.md 'migrated from `codeforester/base`' || failed=1
-    require_text cli/bash/commands/sort-in-place/README.md 'migrated from `codeforester/base`' || failed=1
+    require_text cli/bash/commands/caff/README.md 'migrated from `basefoundry/base`' || failed=1
+    require_text cli/bash/commands/sort-in-place/README.md 'migrated from `basefoundry/base`' || failed=1
     require_text cli/bash/commands/caff/tests/caff.bats 'tests/bats_helper.bash' || failed=1
     require_text cli/bash/commands/sort-in-place/tests/sort-in-place.bats 'tests/bats_helper.bash' || failed=1
     require_text cli/python/README.md 'base_platform_tools.<tool>' || failed=1
