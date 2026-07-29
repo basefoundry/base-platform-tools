@@ -81,7 +81,7 @@ Unsupported platforms should include a short reason.
 ## Migration Policy
 
 The initial migrated utilities are `caff` and `sort-in-place`, which came from
-`codeforester/base`.
+`basefoundry/base`.
 
 When a utility moves here:
 
