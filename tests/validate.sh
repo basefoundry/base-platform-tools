@@ -58,6 +58,8 @@ main() {
     require_file cli/bash/commands/sort-in-place/sort-in-place.sh || failed=1
     require_file cli/bash/commands/sort-in-place/tests/sort-in-place.bats || failed=1
     require_file cli/python/README.md || failed=1
+    require_file .github/base-project.yml || failed=1
+    require_file .github/workflows/project-intake.yml || failed=1
     require_file cli/python/base_platform_tools/__init__.py || failed=1
     require_file docs/cli-layout.md || failed=1
     require_file docs/tooling-boundary.md || failed=1
