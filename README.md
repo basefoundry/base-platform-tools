@@ -38,7 +38,7 @@ the first migrated Bash utility CLIs from Base:
 Clone this repository next to Base:
 
 ```bash
-git clone https://github.com/codeforester/base-platform-tools.git
+git clone https://github.com/basefoundry/base-platform-tools.git
 ```
 
 When Base is installed and the workspace is configured, this project should be
